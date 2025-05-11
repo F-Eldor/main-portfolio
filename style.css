@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -194,15 +195,19 @@ main {
 
 .me-imgs {
     position: relative;
+    height: 250px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.me-img{
+.me-img {
+    position: relative;
     width: 200px;
     height: 250px;
-    border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;
     z-index: 3;
-    box-shadow: 0 0 30px rgba(106, 0, 255, 0.3);
     transition: transform 0.3s ease;
 }
 
@@ -212,13 +217,14 @@ main {
 
 .shadow {
     position: absolute;
-    top: 20px;
-    right: -10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 180px;
     height: 180px;
     background: radial-gradient(circle, rgba(106, 0, 255, 0.4) 0%, transparent 70%);
     border-radius: 50%;
-    z-index: 2;
+    z-index: 1;
 }
 
 .me-content {
@@ -512,21 +518,39 @@ body.light-mode .contact-form textarea {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 20px;
+    padding-top: 100px;
 }
 
 .social-links a {
     color: #FFFFFF;
     font-size: 24px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
 }
+.social-links img {
+    width: 32px;
+    height: 32px;
+    background-image: url('path/to/github-icon.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: brightness(0) invert(1); 
+  }
 
 body.light-mode .social-links a {
     color: #0A0A0F;
 }
 
+body.light-mode .social-links img{
+    filter: brightness(1) invert(0); 
+}
+
 .social-links a:hover {
     color: #6A00FF;
+    transform: scale(1.2);
+}
+
+.social-links i {
+    display: inline-block;
 }
 
 /* Footer */
@@ -593,10 +617,15 @@ body.light-mode footer p {
     .project-card {
         left: 0;
         height: 200px;
+        display: none;
     }
 
     .project2 .project-heading {
         text-align: left;
+        
+    }
+    .project2 .project-content{
+        flex-direction: column;
     }
 }
 

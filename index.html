@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eldor Firdavsov - Portfolio</title>
-    <link rel="icon" href="imgs/logo-favicon.png" type="img/png">
+    <link rel="icon" href="imgs/logo-favicon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome 5 Free CDN -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header data-aos="fade-down">
@@ -148,9 +150,9 @@
                 <button type="submit" class="btn">Send Message</button>
             </form>
             <div class="social-links" data-aos="fade-up" data-aos-delay="400">
-                <a href="https://github.com/F-Eldor" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/eldorfirdavsov" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://twitter.com/eldorfirdavsov" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://github.com/F-Eldor" alt=""> <img src="/imgs/github.png" alt=""></a>
+                <a href="https://instagram.com/21.firdavsov" alt=""> <img src="/imgs/instagram.png" alt=""></a>
+                <a href="https://t.me/VIP_e77" alt=""> <img src="/imgs/telegram.png" alt=""></a>
             </div>
         </section>
     </main>
@@ -162,35 +164,32 @@
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
         </div>
-        <p>&copy; 2025 Eldor Firdavsov. All rights reserved.</p>
+        <p>© 2025 Eldor Firdavsov. All rights reserved.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <script>
         AOS.init({
             duration: 1000,
             once: true
         });
-    
+
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.header-ul');
-    
+
         hamburger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             hamburger.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
         });
-    
+
         const themeToggle = document.querySelector('.theme-toggle');
         const logo = document.getElementById('logo');
-    
+
         themeToggle.addEventListener('click', () => {
             const isLight = document.body.classList.toggle('light-mode');
             themeToggle.textContent = isLight ? '🌞' : '🌙';
             logo.src = isLight ? '/imgs/logo-dark-transparent.png' : '/imgs/logo-transparent.png';
         });
     </script>
-    
-
 </body>
 </html>
