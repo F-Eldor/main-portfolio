@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -220,8 +219,8 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 180px;
-    height: 180px;
+    width: 300px;
+    height: 300px;
     background: radial-gradient(circle, rgba(106, 0, 255, 0.4) 0%, transparent 70%);
     border-radius: 50%;
     z-index: 1;
@@ -280,75 +279,220 @@ body.light-mode .project-description p {
 
 /* Experience Section */
 .experience {
-    background: radial-gradient(circle at top, #1A0A2F 0%, #0A0A0F 60%);
-    padding: 60px 0;
-    border-radius: 20px;
+    position: relative;
+    padding: 100px 0;
     margin-bottom: 120px;
+    background: linear-gradient(180deg, #0A0A0F 0%, #1A0A2F 100%);
+    border-radius: 30px;
+    overflow: hidden;
 }
 
 body.light-mode .experience {
-    background: radial-gradient(circle at top, #E0DFFF 0%, #F5F5F5 60%);
+    background: linear-gradient(180deg, #F5F5F5 0%, #E0DFFF 100%);
+}
+
+.experience::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(106, 0, 255, 0.15), transparent 70%);
+    z-index: 0;
 }
 
 .experience-h2 {
-    font-size: 36px;
-    font-weight: 700;
+    font-size: 48px;
+    font-weight: 800;
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(45deg, #6A00FF, #8B3DFF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.experience-h2::after {
+    content: '';
+    width: 120px;
+    height: 5px;
+    background: linear-gradient(90deg, #6A00FF, #8B3DFF);
+    display: block;
+    margin: 15px auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(106, 0, 255, 0.5);
 }
 
 .experience-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    padding: 0 30px;
+    position: relative;
+    z-index: 1;
 }
 
 .experience-card {
-    background: rgba(26, 10, 47, 0.8);
-    backdrop-filter: blur(8px);
-    border-radius: 15px;
-    padding: 30px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-body.light-mode .experience-card {
-    background: rgba(255, 255, 255, 0.8);
+    perspective: 1000px;
+    height: 300px;
+    position: relative;
+    transition: transform 0.5s ease;
 }
 
 .experience-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(106, 0, 255, 0.2);
+    transform: translateY(-10px);
+}
+
+.experience-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.experience-card:hover .experience-inner {
+    transform: rotateY(180deg);
+}
+
+.experience-front,
+.experience-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.experience-front {
+    background: linear-gradient(135deg, rgba(26, 10, 47, 0.85), rgba(43, 11, 58, 0.65));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(106, 0, 255, 0.3);
+}
+
+body.light-mode .experience-front {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(200, 200, 200, 0.65));
+    border: 1px solid rgba(106, 0, 255, 0.5);
+}
+
+.experience-back {
+    background: linear-gradient(135deg, #6A00FF, #8B3DFF);
+    transform: rotateY(180deg);
+    color: #FFFFFF;
+}
+
+.experience-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(106, 0, 255, 0.3), transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    transition: transform 0.5s ease;
+}
+
+.experience-front:hover .experience-img {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.experience-img::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #6A00FF;
+    border-style: dashed;
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .experience-img img {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
-}
-
-.experience-content {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    filter: brightness(1.3);
 }
 
 .experience-h3 {
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.experience-front .experience-h3 {
+    background: linear-gradient(45deg, #6A00FF, #8B3DFF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.experience-back .experience-h3 {
+    color: #FFFFFF;
+    margin-bottom: 15px;
 }
 
 .experience-text {
-    font-size: 16px;
-    color: #CCCCCC;
+    font-size: 14px;
     line-height: 1.6;
+    max-width: 200px;
+    text-align: center;
+    opacity: 0.9;
 }
 
 .experience-btn {
-    width: fit-content;
+    background: transparent;
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.experience-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.experience-btn:hover::before {
+    left: 100%;
+}
+
+.experience-btn:hover {
+    background: #FFFFFF;
+    color: #6A00FF;
+    transform: scale(1.05);
 }
 
 /* Projects Section */
@@ -527,21 +671,19 @@ body.light-mode .contact-form textarea {
     transition: color 0.3s ease, transform 0.3s ease;
     text-decoration: none;
 }
+
 .social-links img {
     width: 32px;
     height: 32px;
-    background-image: url('path/to/github-icon.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    filter: brightness(0) invert(1); 
-  }
+    filter: brightness(0) invert(1);
+}
 
 body.light-mode .social-links a {
     color: #0A0A0F;
 }
 
-body.light-mode .social-links img{
-    filter: brightness(1) invert(0); 
+body.light-mode .social-links img {
+    filter: brightness(1) invert(0);
 }
 
 .social-links a:hover {
@@ -622,10 +764,18 @@ body.light-mode footer p {
 
     .project2 .project-heading {
         text-align: left;
-        
     }
-    .project2 .project-content{
+    .project2 .project-content {
         flex-direction: column;
+    }
+
+    .experience-cards {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 30px;
+    }
+
+    .experience-card {
+        height: 280px;
     }
 }
 
@@ -675,9 +825,28 @@ body.light-mode footer p {
         height: 130px;
     }
 
-    .experience-card {
-        flex-direction: column;
-        text-align: center;
+    .experience-h2 {
+        font-size: 36px;
+        margin-bottom: 60px;
+    }
+
+    .experience-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .experience-img img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .experience-text {
+        font-size: 13px;
+    }
+
+    .experience-btn {
+        padding: 8px 16px;
+        font-size: 13px;
     }
 }
 
@@ -709,5 +878,28 @@ body.light-mode footer p {
     .footer-links {
         flex-direction: column;
         gap: 15px;
+    }
+
+    .experience-h2 {
+        font-size: 28px;
+    }
+
+    .experience-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .experience-card {
+        height: 260px;
+    }
+
+    .experience-img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .experience-img img {
+        width: 45px;
+        height: 45px;
     }
 }
