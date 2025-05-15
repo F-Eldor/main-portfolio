@@ -74,6 +74,7 @@ nav {
 .header-ul {
     display: flex;
     gap: 40px;
+    margin-left: 200px;
 }
 
 li {
@@ -155,9 +156,11 @@ body.light-mode .hamburger {
     color: #FFFFFF;
     font-size: 20px;
     cursor: pointer;
-    margin-left: 20px;
+    margin-left: 0px;
 }
-
+.header-btn{
+    margin-left: 100px;
+}
 body.light-mode .theme-toggle {
     color: #0A0A0F;
 }
@@ -472,6 +475,7 @@ body.light-mode .experience-front {
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
+    margin-top: 20px;
 }
 
 .experience-btn::before {
@@ -903,3 +907,9 @@ body.light-mode footer p {
         height: 45px;
     }
 }
+
+
+
+/* [data-scroll-container] {
+    overflow: hidden;
+  } */

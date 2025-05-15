@@ -7,8 +7,10 @@
     <link rel="icon" href="imgs/logo-favicon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+
+
 </head>
 <body>
     <header data-aos="fade-down">
@@ -21,7 +23,7 @@
                 <li><a class="header-a" href="#projects">Projects</a></li>
                 <li><a class="header-a" href="#contact">Contact</a></li>
             </ul>
-            <button class="btn"><a class="btn-a" href="#contact">Get in touch</a></button>
+            <button class="btn header-btn"><a class="btn-a" href="#contact">Get in touch</a></button>
             <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
         </nav>
     </header>
@@ -275,6 +277,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
     <script>
         AOS.init({
             duration: 1000,
@@ -297,6 +300,11 @@
             themeToggle.textContent = isLight ? '🌞' : '🌙';
             logo.src = isLight ? '/imgs/logo-dark-transparent.png' : '/imgs/logo-transparent.png';
         });
+
+
+
     </script>
+
+        
 </body>
 </html>
