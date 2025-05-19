@@ -327,7 +327,7 @@ body.light-mode .experience {
     letter-spacing: 3px;
     position: relative;
     z-index: 1;
-    background: linear-gradient(45deg, #6A00FF, #8B3DFF);
+    background: linear-gradient(45deg, #4f00be, #9161f1);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -337,13 +337,24 @@ body.light-mode .experience {
     content: '';
     width: 120px;
     height: 5px;
-    background: linear-gradient(90deg, #6A00FF, #8B3DFF);
+    background: linear-gradient(90deg, #4f00be, #9161f1);
     display: block;
     margin: 15px auto;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(106, 0, 255, 0.5);
+    animation: nimadir 3s linear infinite;
 }
-
+@keyframes nimadir {
+    0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.17);
+      }
+      100% {
+        transform: scale(1);
+      }
+}
 .experience-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -771,7 +782,9 @@ body.light-mode footer p {
         max-width: 100%;
         width: 100%;
     }
-
+    .arrow{
+        display: none;
+    }
     .project-card {
         left: 0;
         height: 200px;
@@ -835,7 +848,9 @@ body.light-mode footer p {
         width: 150px;
         height: 150px;
     }
-
+    .arrow{
+        display: none;
+    }
     .shadow {
         width: 130px;
         height: 130px;
@@ -922,6 +937,3 @@ body.light-mode footer p {
 
 
 
-/* [data-scroll-container] {
-    overflow: hidden;
-  } */
