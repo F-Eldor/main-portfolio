@@ -5,6 +5,7 @@
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
     transition: background-color 0.3s ease, color 0.3s ease;
+    transition: all 0.5s;
 }
 
 body {
@@ -39,7 +40,42 @@ body.light-mode {
 ::-webkit-scrollbar-thumb:hover {
     background: #8B3DFF;
 }
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0A0A0F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  .loader {
+    width: 70px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #fff;
+    -webkit-mask: radial-gradient(circle closest-side at 50% 40%,#0000 94%, #000);
+    transform-origin: 50% 40%;
+    animation: l25 1.5s infinite 0.3s linear;
+  }
+  
+  @keyframes l25 {
+    100% { transform: rotate(1turn); }
+  }
 
+  .content {
+    display: block;           /* Loaderdan keyin JS orqali ko‘rsatish uchun */
+   
+  }
+  
+  .content.visible {
+    opacity: 1;
+  }
+  
 header {
     background: rgba(10, 10, 15, 0.784);
     backdrop-filter: blur(10px);
@@ -264,7 +300,7 @@ body.light-mode .me-p3,
 body.light-mode .about-text,
 body.light-mode .experience-text,
 body.light-mode .project-description p {
-    color: #333333;
+    color: #333333;     
 }
 
 /* About Section */
@@ -284,7 +320,11 @@ body.light-mode .project-description p {
     color: #6A00FF;
     margin-bottom: 20px;
 }
-
+.about-p a{
+    color: #6A00FF;
+    font-size: 28px;
+    font-weight: 600;
+}
 .about-text {
     max-width: 600px;
     font-size: 18px;
