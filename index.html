@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,39 +19,48 @@
         <header data-aos="fade-down">
             <nav data-aos="fade-up">
                 <img src="/imgs/logo-transparent.png" alt="logo" id="logo" class="logo">
+                <img src="/logo/logo-transparent-text.jpg" class="logo logo2" alt="">
                 <button class="hamburger">☰</button>
                 <ul class="header-ul">
                     <li><a class="header-a" href="#home">Home</a></li>
                     <li><a class="header-a" href="#about">About</a></li>
                     <li><a class="header-a" href="#projects">Projects</a></li>
                     <li><a class="header-a" href="#contact">Contact</a></li>
+                    <button class="btn header-btn btn-4"><a class="btn-a" href="#contact"><span>Get in touch</span></a></button>
                 </ul>
-                <button class="btn header-btn"><a class="btn-a" href="#contact">Get in touch</a></button>
                 <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
             </nav>
         </header>
 
+        <!-- <div class="video-background">
+            <video autoplay muted loop playsinline>
+                <source src="/imgs/vecteezy_grid-animation-on-black-background-free-footage_23354649.mp4" type="video/mp4" />
+            </video> -->
+        </div>
+
         <main>
-            <section class="me" id="home" data-aos="fade-up">
-                <img class="arrow" src="/imgs/curved-arrow.png" alt="arrow">
-                <p class="greet">Hello I am <span class="purple">Eldor Firdavsov</span></p>
-                <div class="me-container">
-                    <div class="me-imgs">
-                        <img class="me-img" src="/imgs/image 1.png" alt="me">
-                        <div class="shadow"></div>
-                    </div>
-                    <div class="me-content">
-                        <p class="me-p2">A developer who</p>
-                        <h1 class="me-h">Believes every pixel<br> should have a <span class="purple">purpose..</span></h1>
-                        <p class="me-p3">That is why its called code</p>
+              
+            <section class="main-section">
+                <div class="me" id="home" data-aos="fade-up">
+                    <img class="arrow" src="/imgs/curved-arrow.png" alt="arrow">
+                    <p class="greet">Hello I am <span class="purple">Eldor Firdavsov</span></p>
+                    <div class="me-container">
+                        <div class="me-imgs">
+                            <img class="me-img" src="/imgs/image 1.png" alt="me">
+                            <div class="shadow"></div>
+                        </div>
+                        <div class="me-content">
+                            <p class="me-p2">A developer who</p>
+                            <h1 class="me-h">Believes every pixel<br> should have a <span class="purple">purpose..</span></h1>
+                            <p class="me-p3">That is why its called code</p>
+                        </div>
                     </div>
                 </div>
-            </section>
-
-            <section class="about" id="about" data-aos="fade-up">
-                <h2 class="about-h2">I'm a Developer</h2>
-                <p class="about-p">Currently, I'm a student at <a href="https://www.ilmla.uz/">Ilmla</a></p>
-                <p class="about-text">Taught by professional Backend and Frontend IT teachers, functioning in the industry for 1+ years now. I make meaningful and elegant web pages that suitable for all devices</p>
+                <div class="about" id="about" data-aos="fade-up">
+                    <h2 class="about-h2">I'm a Developer</h2>
+                    <p class="about-p">Currently, I'm a student at <a href="https://www.ilmla.uz/">Ilmla</a></p>
+                    <p class="about-text">Taught by professional Backend and Frontend IT teachers, functioning in the industry for 1+ years now. I make meaningful and elegant web pages that suitable for all devices</p>
+                </div>
             </section>
 
             <section class="experience" id="experience" data-aos="fade-up">
@@ -164,6 +174,7 @@
                     </div>
                     <div class="project-footer">
                         <a href="https://github.com/F-Eldor/Auksion" class="read-more-link">
+                            <p class="typing">Read More</p>
                             <img src="/imgs/read_more_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Read more">
                         </a>
                     </div>
@@ -184,6 +195,7 @@
                     </div>
                     <div class="project-footer">
                         <a href="https://github.com/F-Eldor/Quiz_app" class="read-more-link">
+                            <p class="typing">Read More</p>
                             <img src="/imgs/read_more_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Read more">
                         </a>
                     </div>
@@ -204,6 +216,7 @@
                     </div>
                     <div class="project-footer">
                         <a href="https://start-up-ten-xi.vercel.app/" class="read-more-link">
+                            <p class="typing">Read More</p>
                             <img src="/imgs/read_more_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Read more" loading="lazy">
                         </a>
                     </div>
@@ -224,6 +237,7 @@
                     </div>
                     <div class="project-footer">
                         <a href="https://minimalist-portfolio-ochre.vercel.app/" class="read-more-link">
+                            <p class="typing">Read More</p>
                             <img src="/imgs/read_more_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Read more">
                         </a>
                     </div>
@@ -244,6 +258,7 @@
                     </div>
                     <div class="project-footer">
                         <a href="https://meals-beta-six.vercel.app/" class="read-more-link">
+                            <p class="typing">Read More</p>
                             <img src="/imgs/read_more_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Read more">
                         </a>
                     </div>
@@ -257,13 +272,13 @@
                 <input type="text" placeholder="Your Name" required>
                 <input type="email" placeholder="Your Email" required>
                 <textarea placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
+                <button type="submit" class="btn btn-4"><span>Send Message</span></button>
             </form>
             <div class="social-links" data-aos="fade-up" data-aos-delay="400">
                 <a href="https://github.com/F-Eldor" alt=""><img src="/imgs/github.png" alt=""></a>
-                <a href="https://instagram.com/21.firdavsov" alt=""><img src="/imgs/instagram.png" alt=""></a>
-                <a href="https://t.me/VIP_e77" alt=""><img src="/imgs/telegram.png" alt=""></a>
-            </div>
+                <a href="https://instagram.com/7.eldr" alt=""><img src="/imgs/instagram.png" alt=""></a>
+                <a href="https://t.me/eldr7" alt=""><img src="/imgs/telegram.png" alt=""></a>
+            </div>                      
         </section>
     </main>
 
@@ -284,14 +299,13 @@
             duration: 1000,
             once: true
         });
-
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.header-ul');
 
         hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            hamburger.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
-        });
+        navMenu.classList.toggle('active');
+  });
+        
 
         const themeToggle = document.querySelector('.theme-toggle');
         const logo = document.querySelector('#logo');
@@ -307,8 +321,24 @@
             document.querySelector('.loader-wrapper').style.display = 'none';
             document.querySelector('.content').style.display = 'block';
             document.body.style.overflow = 'auto'; 
-        }, 3000);
+        }, 2000);
         });
+
+
+
+        const text = "Read more";
+    const typingElement = document.getElementById("typing");
+    let index = 0;
+
+    function type() {
+    if (index < text.length) {
+        typingElement.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 300);  // harf chiqish oralig‘i (300ms)
+    }
+    }
+
+    type();
 
 
     </script>
